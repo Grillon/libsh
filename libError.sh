@@ -14,7 +14,7 @@ libError
 
 Error handling and debug library. To use it just source it on the begining of your script.
 
-=head1 Dependancies
+=head1 Dependencies
 
 no dependencies.
 

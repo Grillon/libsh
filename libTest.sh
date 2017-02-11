@@ -14,7 +14,7 @@ libTest.sh
 
 Test library. aide à tester le comportement d un script dans un environnement maitrise.
 
-=head1 Dependancies
+=head1 Dependencies
 
 libError.sh
 
