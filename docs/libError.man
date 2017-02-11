@@ -146,7 +146,7 @@ libError
 Error handling and debug library. To use it just source it on the begining of your script.
 .SH "Dependancies"
 .IX Header "Dependancies"
-no dependancies.
+no dependencies.
 .SH "Functions"
 .IX Header "Functions"
 .SS "debug"

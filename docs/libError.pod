@@ -13,7 +13,7 @@ Error handling and debug library. To use it just source it on the begining of yo
 
 =head1 Dependancies
 
-no dependancies.
+no dependencies.
 
 =head1 Functions
 
