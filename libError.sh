@@ -4,6 +4,8 @@
 
 =pod
 
+=encoding utf-8 
+
 =head1 Name
 
 libError
@@ -30,7 +32,9 @@ eval $HEADER
 =item MODE_DEBUG
 
 0 : normal mode
+
 1 : as set -x
+
 2 : as set -xv
 
 just put $MODE_DEBUG to each fonctions and you could debug on purpose from your main program.
@@ -58,8 +62,8 @@ ESTOP=251;
 
 usage : 
 
-ls my_file
-C<erreur $? "mesage" $ECONT "COMMAND">
+C<ls my_file
+erreur $? "mesage" $ECONT "COMMAND">
 
 erreur take the first arg, 
 
@@ -81,6 +85,7 @@ before stoping or continue it start COMMAND. COMMAND is optionnal
 =head4 case1 : no error
 
 C<ls my_file>
+
 C<erreur $? "presence fichier my_file" $ECONT "ls .">
 
 ls returns 0, so erreur return a message : B<myhostname - 0211 17:21 - myprogram(myfunction):  presence fichier my_file  OK>

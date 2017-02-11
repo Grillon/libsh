@@ -158,7 +158,9 @@ eval \f(CW$HEADER\fR
 .IP "\s-1MODE_DEBUG\s0" 4
 .IX Item "MODE_DEBUG"
 0 : normal mode
+.Sp
 1 : as set \-x
+.Sp
 2 : as set \-xv
 .Sp
 just put \f(CW$MODE_DEBUG\fR to each fonctions and you could debug on purpose from your main program.
@@ -183,8 +185,8 @@ ESTOP=251;
 .PP
 usage :
 .PP
-ls my_file
-\&\f(CW\*(C`erreur $? "mesage" $ECONT "COMMAND"\*(C'\fR
+\&\f(CW\*(C`ls my_file
+erreur $? "mesage" $ECONT "COMMAND"\*(C'\fR
 .PP
 erreur take the first arg,
 .IP "\(bu" 4
@@ -200,6 +202,7 @@ case1 : no error
 .IX Subsection "case1 : no error"
 .PP
 \&\f(CW\*(C`ls my_file\*(C'\fR
+.PP
 \&\f(CW\*(C`erreur $? "presence fichier my_file" $ECONT "ls ."\*(C'\fR
 .PP
 ls returns 0, so erreur return a message : \fBmyhostname \- 0211 17:21 \- myprogram(myfunction):  presence fichier my_file  \s-1OK\s0\fR

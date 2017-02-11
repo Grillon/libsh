@@ -60,7 +60,11 @@
 <dt id="MODE_DEBUG">MODE_DEBUG</dt>
 <dd>
 
-<p>0 : normal mode 1 : as set -x 2 : as set -xv</p>
+<p>0 : normal mode</p>
+
+<p>1 : as set -x</p>
+
+<p>2 : as set -xv</p>
 
 <p>just put $MODE_DEBUG to each fonctions and you could debug on purpose from your main program.</p>
 
@@ -87,7 +91,7 @@
 
 <p>usage :</p>
 
-<p>ls my_file <code>erreur $? &quot;mesage&quot; $ECONT &quot;COMMAND&quot;</code></p>
+<p><code>ls my_file erreur $? &quot;mesage&quot; $ECONT &quot;COMMAND&quot;</code></p>
 
 <p>erreur take the first arg,</p>
 
@@ -105,7 +109,9 @@
 
 <h4 id="case1-:-no-error">case1 : no error</h4>
 
-<p><code>ls my_file</code> <code>erreur $? &quot;presence fichier my_file&quot; $ECONT &quot;ls .&quot;</code></p>
+<p><code>ls my_file</code></p>
+
+<p><code>erreur $? &quot;presence fichier my_file&quot; $ECONT &quot;ls .&quot;</code></p>
 
 <p>ls returns 0, so erreur return a message : <b>myhostname - 0211 17:21 - myprogram(myfunction): presence fichier my_file OK</b></p>
 
