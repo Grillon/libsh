@@ -144,8 +144,8 @@ libTest.sh
 .SH "Description"
 .IX Header "Description"
 Test library. aide a\*` tester le comportement d un script dans un environnement maitrise.
-.SH "Dependancies"
-.IX Header "Dependancies"
+.SH "Dependencies"
+.IX Header "Dependencies"
 libError.sh
 .SH "Functions"
 .IX Header "Functions"

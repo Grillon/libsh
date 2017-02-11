@@ -144,8 +144,8 @@ libError
 .SH "Description"
 .IX Header "Description"
 Error handling and debug library. To use it just source it on the begining of your script.
-.SH "Dependancies"
-.IX Header "Dependancies"
+.SH "Dependencies"
+.IX Header "Dependencies"
 no dependencies.
 .SH "Functions"
 .IX Header "Functions"
