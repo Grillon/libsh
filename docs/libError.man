@@ -185,8 +185,10 @@ ESTOP=251;
 .PP
 usage :
 .PP
-\&\f(CW\*(C`ls my_file
-erreur $? "mesage" $ECONT "COMMAND"\*(C'\fR
+.Vb 2
+\& C<ls my_file>
+\& C<erreur $? "mesage" $ECONT "COMMAND">
+.Ve
 .PP
 erreur take the first arg,
 .IP "\(bu" 4
@@ -201,9 +203,10 @@ before stoping or continue it start \s-1COMMAND. COMMAND\s0 is optionnal
 case1 : no error
 .IX Subsection "case1 : no error"
 .PP
-\&\f(CW\*(C`ls my_file\*(C'\fR
-.PP
-\&\f(CW\*(C`erreur $? "presence fichier my_file" $ECONT "ls ."\*(C'\fR
+.Vb 2
+\& C<ls my_file>
+\& C<erreur $? "presence fichier my_file" $ECONT "ls .">
+.Ve
 .PP
 ls returns 0, so erreur return a message : \fBmyhostname \- 0211 17:21 \- myprogram(myfunction):  presence fichier my_file  \s-1OK\s0\fR
 .PP
@@ -212,8 +215,10 @@ case2 : continue on error
 .PP
 same exemple :
 .PP
-\&\f(CW\*(C`ls my_file\*(C'\fR
-\&\f(CW\*(C`erreur $? "presence fichier my_file" $ECONT "ls ."\*(C'\fR
+.Vb 2
+\& C<ls my_file>
+\& C<erreur $? "presence fichier my_file" $ECONT "ls .">
+.Ve
 .PP
 ls return 2 : file not found. so erreur keep the return code of ls I mean 2. then execute the forth arg, in our exemple it's \*(L"ls .\*(R".finally return 2 with the message \fBmyhostname \- 0211 17:28 \- : myprogram(myfunction) presence fichier my_file  \s-1KO\s0\fR
 .PP
@@ -225,8 +230,10 @@ the same as explained before without execution of the forth argument because you
 case4 : stop on error with action
 .IX Subsection "case4 : stop on error with action"
 .PP
-\&\f(CW\*(C`ls my_file\*(C'\fR
-\&\f(CW\*(C`erreur $? "presence fichier my_file" $ESTOP "ls ."\*(C'\fR
+.Vb 2
+\& C<ls my_file>
+\& C<erreur $? "presence fichier my_file" $ESTOP "ls .">
+.Ve
 .PP
 as you can see I put \f(CW$ESTOP\fR instead of \f(CW$ECONT\fR witch mean please stop on error. The forth arg is executed before the program exit.
 .SH "Author"

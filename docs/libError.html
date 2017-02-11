@@ -91,7 +91,8 @@
 
 <p>usage :</p>
 
-<p><code>ls my_file erreur $? &quot;mesage&quot; $ECONT &quot;COMMAND&quot;</code></p>
+<pre><code> C&lt;ls my_file&gt;
+ C&lt;erreur $? &quot;mesage&quot; $ECONT &quot;COMMAND&quot;&gt;</code></pre>
 
 <p>erreur take the first arg,</p>
 
@@ -109,9 +110,8 @@
 
 <h4 id="case1-:-no-error">case1 : no error</h4>
 
-<p><code>ls my_file</code></p>
-
-<p><code>erreur $? &quot;presence fichier my_file&quot; $ECONT &quot;ls .&quot;</code></p>
+<pre><code> C&lt;ls my_file&gt;
+ C&lt;erreur $? &quot;presence fichier my_file&quot; $ECONT &quot;ls .&quot;&gt;</code></pre>
 
 <p>ls returns 0, so erreur return a message : <b>myhostname - 0211 17:21 - myprogram(myfunction): presence fichier my_file OK</b></p>
 
@@ -119,7 +119,8 @@
 
 <p>same exemple :</p>
 
-<p><code>ls my_file</code> <code>erreur $? &quot;presence fichier my_file&quot; $ECONT &quot;ls .&quot;</code></p>
+<pre><code> C&lt;ls my_file&gt;
+ C&lt;erreur $? &quot;presence fichier my_file&quot; $ECONT &quot;ls .&quot;&gt;</code></pre>
 
 <p>ls return 2 : file not found. so erreur keep the return code of ls I mean 2. then execute the forth arg, in our exemple it&#39;s &quot;ls .&quot;.finally return 2 with the message <b>myhostname - 0211 17:28 - : myprogram(myfunction) presence fichier my_file KO</b></p>
 
@@ -129,7 +130,8 @@
 
 <h4 id="case4-:-stop-on-error-with-action">case4 : stop on error with action</h4>
 
-<p><code>ls my_file</code> <code>erreur $? &quot;presence fichier my_file&quot; $ESTOP &quot;ls .&quot;</code></p>
+<pre><code> C&lt;ls my_file&gt;
+ C&lt;erreur $? &quot;presence fichier my_file&quot; $ESTOP &quot;ls .&quot;&gt;</code></pre>
 
 <p>as you can see I put $ESTOP instead of $ECONT witch mean please stop on error. The forth arg is executed before the program exit.</p>
 
