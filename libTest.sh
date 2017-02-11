@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 <<=cut
+
 =pod
+
+=encoding utf-8
 
 =head1 Name
 
@@ -40,7 +43,7 @@ TODO : verify stderr
 
 TODO : verify stdout
 
-=Author
+=head1 Author
 
 Grillon
 
