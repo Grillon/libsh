@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 . libError.sh
+debug 0
 #if [ $# -ne 1 ];then
 	#echo "veuillez fournir un nom de fichier sh contenant du pod en argument"
 	#exit 1
@@ -9,9 +10,17 @@
 #fi
 for file in *.*sh
 do
-	destination=docs/${file%.sh}{.pod,.html,.man}
-	./extract_pod.sh $file > docs/${file%.sh}.pod
-	erreur $? "conversioni $file" "rm $destination"
-	pod2html $file > docs/${file%.sh}.html
-	pod2man $file > docs/${file%.sh}.man
+	destinations=docs/${file%.sh}
+
+	destination=${destinations}.pod
+	./extract_pod.sh $file > ${destination}
+	erreur $? "conversioni $file" $ECONT "rm $destination;continue"
+
+	destination=${destinations}.html
+	pod2html $file > ${destination}
+	erreur $? "conversioni $file" $ECONT "rm $destination;continue"
+
+	destination=${destinations}.man
+	pod2man $file > ${destination}
+	erreur $? "conversioni $file" $ECONT "rm $destination;continue"
 done
