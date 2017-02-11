@@ -153,12 +153,14 @@ libError.sh
 .IX Subsection "assert_return_code"
 assert_return_code \*(L"\s-1COMMAND\*(R" \*(L"EXPECTED_RETURN_CODE\*(R"\s0
 .PP
-\&\s-1RETURN 0\s0 if \s-1EXPECTED_RETURN_CODE\s0 == \s-1RETURN_CODE
-RETURN 1\s0 othewise
+.Vb 2
+\& RETURN 0 if EXPECTED_RETURN_CODE == RETURN_CODE
+\& RETURN 1 othewise
+.Ve
 .PP
 in both case there are a message of type
 .PP
-\&\s-1HOSTNAME \- DATE TIME \- PROGRAM \-\s0(\s-1FUNCTION_TESTED\s0) \s-1RETURN_CODE\s0;EXPECTED_RETURN_CODE \s-1STATE\s0
+\&\fBhostname \- date time \- program \-(function_tested) return_code;expected_return_code state\fR
 .PP
 tel que :
 .PP

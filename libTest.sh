@@ -24,12 +24,12 @@ libError.sh
 
 assert_return_code "COMMAND" "EXPECTED_RETURN_CODE"
 
-RETURN 0 if EXPECTED_RETURN_CODE == RETURN_CODE
-RETURN 1 othewise
+ RETURN 0 if EXPECTED_RETURN_CODE == RETURN_CODE
+ RETURN 1 othewise
 
 in both case there are a message of type
 
-HOSTNAME - DATE TIME - PROGRAM -(FUNCTION_TESTED) RETURN_CODE;EXPECTED_RETURN_CODE STATE
+B<hostname - date time - program -(function_tested) return_code;expected_return_code state>
 
 tel que :
 

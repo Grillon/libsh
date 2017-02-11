@@ -14,13 +14,13 @@ do
 
 	destination=${destinations}.pod
 	./extract_pod.sh $file > ${destination}
-	erreur $? "conversioni $file" $ECONT "rm $destination;continue"
+	erreur $? "conversion $file" $ECONT "rm $destination;continue"
 
 	destination=${destinations}.html
 	pod2html $file > ${destination}
-	erreur $? "conversioni $file" $ECONT "rm $destination;continue"
+	erreur $? "conversion $file" $ECONT "rm $destination;continue"
 
 	destination=${destinations}.man
 	pod2man $file > ${destination}
-	erreur $? "conversioni $file" $ECONT "rm $destination;continue"
+	erreur $? "conversion $file" $ECONT "rm $destination;continue"
 done
