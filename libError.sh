@@ -125,7 +125,7 @@ ESTOP=251;
 cAwk=${cAwk:=awk}
 
 #titre fonction plus arg1
-HEADER="typeset maFonction=\"\${aGras}\${0}\${dGras} -\";typeset mf=\"\${maFonction}(\$1)\"";
+HEADER="typeset maFonction=\"\${aGras}\${0}:\${FUNCNAME}\${dGras}\";typeset mf=\"\${maFonction}(\$@)\"";
 
 #HEADERS
 #= verification du nombre d'arguments
@@ -161,7 +161,6 @@ return 0
 function erreur
 {
 $MODE_DEBUG
-eval $HEADER
 #erreur devient complexe
 #arg 1 : numero d'erreur;
 #arg 2 : message;
@@ -174,7 +173,7 @@ typeset codeRetourS=$3
 typeset date=$(date "+%m%d %H:%M")
 
 if [ $codeRetourE -ne 0 ];then
-	echo "${aGras} $(uname -n) ${dGras} - $date - : ${tRouge} $message ${fRouge}${tBlanc} KO ${raz}" >&2
+	echo "${aGras} $(uname -n) ${dGras} - $date - $mf: ${tRouge} $message ${fRouge}${tBlanc} KO ${raz}" >&2
 	if [ -n "$4" ];then
 		typeset action=$4
 		eval $action
@@ -185,7 +184,7 @@ if [ $codeRetourE -ne 0 ];then
 	fi
 	return $codeRetourE;
 else
-echo "${aGras} $(uname -n) ${dGras}  - $date - : ${tVert} $message ${fVert}${tNoir} OK ${raz}"
+echo "${aGras} $(uname -n) ${dGras}  - $date - $mf: ${tVert} $message ${fVert}${tNoir} OK ${raz}"
 return $OK;
 fi
 }
